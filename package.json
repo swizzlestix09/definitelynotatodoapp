@@ -1,0 +1,27 @@
+{
+  "name": "definitelynotatodoapp",
+  "version": "1.0.0",
+  "description": "definitely not a todo app........",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swizzlestix09/definitelynotatodoapp.git"
+  },
+  "keywords": [
+    "todo",
+    "react",
+    "js",
+    "express",
+    "fetch",
+    "mongodb"
+  ],
+  "author": "angely rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swizzlestix09/definitelynotatodoapp/issues"
+  },
+  "homepage": "https://github.com/swizzlestix09/definitelynotatodoapp#readme"
+}
