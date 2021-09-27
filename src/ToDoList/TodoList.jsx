@@ -1,11 +1,12 @@
 import React from "react";
-import { hot } from 'react-hot-loader/root';
-
+import InputText from './InputText';
+import dummydata from '../../dummydata.js';
 
 const toDoList = (props) => {
+  console.log(dummydata)
+return (
+  <InputText />
+)
+};
 
-
-
-}
-
-export default toDoList
+export default toDoList;

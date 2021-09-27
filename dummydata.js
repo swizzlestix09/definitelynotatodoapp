@@ -5,3 +5,5 @@ var dummydata = [
   "Return videos to blockbuster rental (28 years overdue)",
   "I love my husband - but F*CK cooking tonight"
 ]
+
+export default dummydata;
