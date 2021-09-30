@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import TodoList from './ToDoList/TodoList';
@@ -9,6 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       todoList: [...dummydata],
+      completedTodos: []
     };
   }
 
