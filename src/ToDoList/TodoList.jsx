@@ -1,12 +1,13 @@
 import React from 'react';
+import dummydata from '../../dummydata';
 import InputText from './InputText';
 
-const toDoList = (props) => {
+const TodoList = ({ props }) => {
   let listItems = [];
-  if (!props.tasks) {
-    listItems = <div>I'm so empty. Like Kate Moss.</div>;
+  if (!props) {
+    listItems = <div>Im so empty. Like Kate Moss.</div>;
   } else {
-    listItems = props.todoList.map((task, i) => (
+    listItems = dummydata.map((task, i) => (
       <li key={i.toString()} className="eachTask">
         {task}
         <input type="checkbox" />
@@ -22,4 +23,4 @@ const toDoList = (props) => {
   );
 };
 
-export default toDoList;
+export default TodoList;
