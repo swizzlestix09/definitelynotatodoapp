@@ -1,5 +1,5 @@
 import React from 'react';
-import InputText from './InputText';
+
 
 const TodoList = ({ tasks }) => {
   let listItems = [];
@@ -16,7 +16,6 @@ const TodoList = ({ tasks }) => {
 
   return (
     <div>
-      <InputText />
       <ul>{listItems}</ul>
     </div>
   );
