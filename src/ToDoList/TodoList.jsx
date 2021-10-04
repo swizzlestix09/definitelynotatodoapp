@@ -1,13 +1,12 @@
 import React from 'react';
-import dummydata from '../../dummydata';
 import InputText from './InputText';
 
-const TodoList = ({ props }) => {
+const TodoList = ({ tasks }) => {
   let listItems = [];
-  if (!props) {
+  if (!tasks) {
     listItems = <div>Im so empty. Like Kate Moss.</div>;
   } else {
-    listItems = dummydata.map((task, i) => (
+    listItems = tasks.map((task, i) => (
       <li key={i.toString()} className="eachTask">
         {task}
         <input type="checkbox" />
