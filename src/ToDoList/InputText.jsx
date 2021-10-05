@@ -1,11 +1,11 @@
 import React from 'react';
 
-const InputText = ({ textChange, submitToDo }) => {
+const InputText = ({ currentToDo, textChange, submitToDo }) => {
 
   return(
   <div>
     <form>
-      <input type="text" defaultValue="stuff" onChange={textChange}/>
+      <input type="text" defaultValue={currentToDo} onChange={textChange}/>
       <input type="submit" value="+" onClick={submitToDo}/>
     </form>
   </div>
