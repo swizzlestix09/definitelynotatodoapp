@@ -17,14 +17,13 @@ class App extends React.Component {
 
   textChange(e) {
     this.setState({ currentToDo: e.target.value });
-    e.preventDefault;
   }
 
   submitToDo(e) {
     let current = this.state.currentToDo;
     let currentToDos = [current, ...this.state.todos];
     this.setState({ todos: [...currentToDos] });
-    e.preventDefault;
+    e.preventDefault();
   }
 
   render() {
