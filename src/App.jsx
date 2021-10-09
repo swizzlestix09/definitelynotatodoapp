@@ -28,13 +28,15 @@ class App extends React.Component {
   }
 
   markedAsComplete(e){
-    console.log(e.target.value)
-
+    let i = e.target.value;
+    let todos = this.state.todos;
+    let completed = todos.splice(i, 1)
+    let allCompleted = this.state.completedTodos;
+    this.setState({ completedTodos: [...completed, ...allCompleted]})
   }
 
   render() {
     const { todos, currentToDo } = this.state;
-
     return (
       <div>
         <h1 className="todotitle">Definitely Not a Todo App</h1>
