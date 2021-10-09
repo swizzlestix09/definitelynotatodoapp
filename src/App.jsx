@@ -13,6 +13,7 @@ class App extends React.Component {
     };
     this.textChange = this.textChange.bind(this);
     this.submitToDo = this.submitToDo.bind(this);
+    this.markedAsComplete = this.markedAsComplete.bind(this);
   }
 
   textChange(e) {
@@ -22,8 +23,13 @@ class App extends React.Component {
   submitToDo(e) {
     let current = this.state.currentToDo;
     let currentToDos = [current, ...this.state.todos];
-    this.setState({ todos: [...currentToDos] });
+    this.setState({ todos: [...currentToDos] , currentToDo: 'stuff'});
     e.preventDefault();
+  }
+
+  markedAsComplete(e){
+    console.log(e.target.value)
+
   }
 
   render() {
@@ -33,7 +39,7 @@ class App extends React.Component {
       <div>
         <h1 className="todotitle">Definitely Not a Todo App</h1>
         <InputText submitToDo={this.submitToDo} textChange={this.textChange} currentToDo={currentToDo} />
-        <TodoList tasks={todos} />
+        <TodoList tasks={todos} markedAsComplete={this.markedAsComplete} />
       </div>
     );
   }
