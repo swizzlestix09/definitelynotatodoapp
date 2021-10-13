@@ -6,6 +6,7 @@ import InputText from "./ToDoList/InputText";
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.unCheck = React.createRef();
     this.state = {
       currentToDo: 'stuff',
       todos: [...dummydata],
