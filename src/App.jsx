@@ -15,6 +15,11 @@ class App extends React.Component {
     this.textChange = this.textChange.bind(this);
     this.submitToDo = this.submitToDo.bind(this);
     this.markedAsComplete = this.markedAsComplete.bind(this);
+    this.changeCheck = this.changeCheck.bind(this);
+  }
+
+  changeCheck(){
+    this.unCheck.current.focus();
   }
 
   textChange(e) {
