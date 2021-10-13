@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const TodoList = ({ tasks, markedAsComplete }) => {
+const TodoList = ({ tasks, markedAsComplete, checkRef}) => {
   let listItems = [];
   if (!tasks) {
     listItems = <div>Im so empty. Like Kate Moss.</div>;
@@ -9,7 +9,7 @@ const TodoList = ({ tasks, markedAsComplete }) => {
     listItems = tasks.map((task, i) => (
       <li key={i.toString()} className="eachTask">
         {task}
-        <input type="checkbox" value={i} onClick={markedAsComplete} ref={}/>
+        <input type="checkbox" value={i} onClick={markedAsComplete} ref={checkRef} />
       </li>
     ));
   }
