@@ -15,12 +15,8 @@ class App extends React.Component {
     this.textChange = this.textChange.bind(this);
     this.submitToDo = this.submitToDo.bind(this);
     this.markedAsComplete = this.markedAsComplete.bind(this);
-    this.focusCheck = this.focusCheck.bind(this)
   }
 
-  focusCheck(){
-    this.unCheck.current.focus()
-  }
 
   textChange(e) {
     this.setState({ currentToDo: e.target.value });
@@ -39,7 +35,6 @@ class App extends React.Component {
     let completed = todos.splice(i, 1)
     let allCompleted = this.state.completedTodos;
     this.setState({ completedTodos: [...completed, ...allCompleted]});
-    this.focusCheck();
     e.preventDefault();
   }
 

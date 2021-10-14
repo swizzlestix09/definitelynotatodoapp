@@ -9,7 +9,7 @@ const TodoList = ({ tasks, markedAsComplete, checkRef}) => {
     listItems = tasks.map((task, i) => (
       <li key={i.toString()} className="eachTask">
         {task}
-        <input type="checkbox" value={i} onClick={markedAsComplete} ref={checkRef} />
+        <input ref={checkRef} type="checkbox" value={i} onClick={ ()=>{markedAsComplete(event)}}  />
       </li>
     ));
   }
