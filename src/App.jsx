@@ -2,7 +2,7 @@ import React from "react";
 import dummydata from "../dummydata";
 import TodoList from "./ToDoList/TodoList";
 import InputText from "./ToDoList/InputText";
-
+import CompletedToDo from "./ToDoList/CompletedToDo";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +45,7 @@ class App extends React.Component {
         <h1 className="todotitle">Definitely Not a Todo App</h1>
         <InputText submitToDo={this.submitToDo} textChange={this.textChange} currentToDo={currentToDo} />
         <TodoList tasks={todos} markedAsComplete={this.markedAsComplete} checkRef={this.unCheck} />
+        <CompletedToDo complete={this.state.completedTodos} />
       </div>
     );
   }
