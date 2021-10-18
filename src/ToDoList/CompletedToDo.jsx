@@ -2,7 +2,6 @@ import React from "react";
 
 const CompletedToDo = ({ complete }) => (
  <div>
-   <h1>Stuff That Doesn't Matter:</h1>
    <ul>
    {complete.map(eaItem => {
      return(
@@ -10,7 +9,6 @@ const CompletedToDo = ({ complete }) => (
      )
     })}
    </ul>
-
  </div>
 );
 
