@@ -15,7 +15,7 @@ const TodoList = ({ tasks, markedAsComplete, checkRef}) => {
   }
 
   return (
-    <div>
+    <div className="todoList">
       <ul>{listItems}</ul>
     </div>
   );
