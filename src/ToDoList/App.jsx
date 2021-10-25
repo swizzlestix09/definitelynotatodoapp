@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.unCheck = React.createRef();
     this.state = {
-      currentToDo: " stuff",
+      currentToDo: " the stuffs...",
       todos: [...dummydata],
       completedTodos: [],
     };
@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <>
         <div className="mainDiv">
-          <h1 className="title">Definitely Not a Todo App</h1>
+          <h1 className="title headers">Definitely Not a Todo App</h1>
           <InputText
             submitToDo={this.submitToDo}
             textChange={this.textChange}
