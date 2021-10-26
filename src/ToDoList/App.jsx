@@ -19,6 +19,7 @@ class App extends React.Component {
     this.markedAsComplete = this.markedAsComplete.bind(this);
   }
 
+
   textChange(e) {
     this.setState({ currentToDo: e.target.value });
   }
@@ -40,14 +41,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { todos, currentToDo } = this.state;
+    const { todos, currentToDo, submitToDo, textChange} = this.state;
     return (
       <>
         <div className="mainDiv">
           <h1 className="title headers">Definitely Not a Todo App</h1>
           <InputText
-            submitToDo={this.submitToDo}
-            textChange={this.textChange}
+            submitToDo={submitToDo}
+            textChange={textChange}
             currentToDo={currentToDo}
           />
           <div className="todoDivs">
