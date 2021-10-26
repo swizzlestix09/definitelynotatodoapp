@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.unCheck = React.createRef();
     this.state = {
-      currentToDo: " the stuffs...",
+      currentToDo: "",
       todos: [...dummydata],
       completedTodos: [],
     };
@@ -21,13 +21,15 @@ class App extends React.Component {
 
 
   textChange(e) {
+    console.log(e.target.value);
     this.setState({ currentToDo: e.target.value });
+    e.preventDefault();
   }
 
   submitToDo(e) {
     let current = this.state.currentToDo;
     let currentToDos = [current, ...this.state.todos];
-    this.setState({ todos: [...currentToDos], currentToDo: "stuff" });
+    this.setState({ todos: [...currentToDos]});
     e.preventDefault();
   }
 
@@ -41,14 +43,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { todos, currentToDo, submitToDo, textChange, completedTodos} = this.state;
+    const { todos, currentToDo, submitToDo, completedTodos} = this.state;
     return (
       <>
         <div className="mainDiv">
           <h1 className="title headers">Definitely Not a Todo App</h1>
           <InputText
-            submitToDo={submitToDo}
-            textChange={textChange}
+            submitToDo={this.submitToDo}
+            textChange={this.textChange}
             currentToDo={currentToDo}
           />
           <div className="todoDivs">
