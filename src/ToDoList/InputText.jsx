@@ -7,7 +7,7 @@ const InputText = ({ currentToDo, textChange, submitToDo }) => (
       <br/>
       <textarea className="inputBx"type="text" defaultValue={currentToDo} onChange={textChange}/>
       <br/>
-      <input type="submit" value="Submit"/>
+      <input className="submitBtn" type="submit" value="Submit"/>
     </form>
   </div>
 );

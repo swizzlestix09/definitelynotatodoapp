@@ -36,12 +36,12 @@ class App extends React.Component {
     let todos = this.state.todos;
     let completed = todos.splice(i, 1);
     let allCompleted = this.state.completedTodos;
-    this.setState({ completedTodos: [...completed, ...allCompleted] });
+    this.setState({ completedTodos: [...completed, ...allCompleted]});
     e.preventDefault();
   }
 
   render() {
-    const { todos, currentToDo, submitToDo, textChange} = this.state;
+    const { todos, currentToDo, submitToDo, textChange, completedTodos} = this.state;
     return (
       <>
         <div className="mainDiv">
@@ -56,8 +56,9 @@ class App extends React.Component {
               tasks={todos}
               markedAsComplete={this.markedAsComplete}
               checkRef={this.unCheck}
+              completedTodos={completedTodos}
             />
-            <CompletedToDo complete={this.state.completedTodos} />
+            {/* <CompletedToDo complete={this.state.completedTodos} /> */}
           </div>
         </div>
       </>

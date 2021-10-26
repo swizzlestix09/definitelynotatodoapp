@@ -99,18 +99,25 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
   0 0 10px #FFF,
 }
 
-.todoDivs {
+.todoDivs .todoList {
   display: flex;
+  margin: auto;
   flex-direction: column;
+  width: 70%;
+  padding: 10px;
 }
 
+.strikeout {
+  color: rgba(23, 39, 116, 0.3)
+}
 .todoList {
   display: flex;
-  max-width: 24rem;
+  flex-direction: column;
+  max-width: 50%;
   margin: 0.5rem;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow:  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow:  0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   background-color: #EEE;
 }
 
@@ -118,7 +125,19 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
   text-align: center;
 }
 
+.submitBtn {
+  background-color: #FF0075;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-family: 'Lobster Two', cursive;
+}
+
 .inputBx {
+  margin: 0 auto;
   background-color:rgba(0, 0, 0, 0);
   color: rgba(238,238,238, 0.5);
   border-radius: 5px;

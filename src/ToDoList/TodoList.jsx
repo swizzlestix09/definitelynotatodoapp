@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const TodoList = ({ tasks, markedAsComplete, checkRef}) => {
-  let listItems = [];
+const TodoList = ({ tasks, markedAsComplete, checkRef, completedTodos}) => {
+  let listItems, strikeouts= [];
   if (!tasks) {
     listItems = <div>Im so empty. Like Kate Moss.</div>;
   } else {
@@ -14,9 +14,16 @@ const TodoList = ({ tasks, markedAsComplete, checkRef}) => {
     ));
   }
 
+  if(completedTodos.length > 0) {
+    strikeouts = completedTodos.map((strike, i) => (
+      <li><strike className="strikeout" key={`done${i.toString()}`}>{strike}</strike></li>
+    ));
+  }
+
   return (
     <div className="todoList">
       <ul>{listItems}</ul>
+      <ul>{strikeouts}</ul>
     </div>
   );
 };
