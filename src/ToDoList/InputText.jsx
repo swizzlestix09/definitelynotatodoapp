@@ -2,7 +2,7 @@ import React from 'react';
 
 const InputText = ({ currentToDo, textChange, submitToDo }) => (
   <div className="todoForm">
-    <form onSubmit={submitToDo}>
+    <form onSubmit={(event)=> {submitToDo(event)}}>
       <label className="todoLabel headers">Stuffs:</label>
       <br/>
       <textarea className="inputBx" value={currentToDo} type="text" onChange={textChange}/>

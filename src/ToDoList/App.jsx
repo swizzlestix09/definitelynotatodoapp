@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.unCheck = React.createRef();
     this.state = {
-      currentToDo: "stuffs....",
+      currentToDo: "start writing",
       todos: [...dummydata],
       completedTodos: [],
     };
@@ -22,17 +22,18 @@ class App extends React.Component {
 
   textChange(e) {
     let todo = e.target.value;
-    todo = todo.split("stuffs....")
-    todo = todo[0]
-    console.log(todo)
-    this.setState({ currentToDo: todo});
+    todo.includes('start writing') ? todo = todo.split("start writing")[1] : todo;
+    console.log('in txtchng ', todo)
+    this.setState({ currentToDo: todo });
     e.preventDefault();
   }
 
   submitToDo(e) {
-    let current = this.state.currentToDo;
+    let current = this.state.currentToDo.slice(0);
+    console.log('uuugghhhh', current)
     let currentToDos = [current, ...this.state.todos];
-    this.setState({ todos: [...currentToDos]});
+
+    this.setState({ todos: [...currentToDos], currentToDo: "start writing" });
     e.preventDefault();
   }
 
@@ -47,6 +48,7 @@ class App extends React.Component {
 
   render() {
     const { todos, currentToDo, submitToDo, completedTodos} = this.state;
+    console.log('why? ', this.state.currentToDo)
     return (
       <>
         <div className="mainDiv">
