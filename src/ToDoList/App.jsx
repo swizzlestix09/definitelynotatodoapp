@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.unCheck = React.createRef();
     this.state = {
-      currentToDo: "",
+      currentToDo: "stuffs....",
       todos: [...dummydata],
       completedTodos: [],
     };
@@ -21,8 +21,11 @@ class App extends React.Component {
 
 
   textChange(e) {
-    console.log(e.target.value);
-    this.setState({ currentToDo: e.target.value });
+    let todo = e.target.value;
+    todo = todo.split("stuffs....")
+    todo = todo[0]
+    console.log(todo)
+    this.setState({ currentToDo: todo});
     e.preventDefault();
   }
 

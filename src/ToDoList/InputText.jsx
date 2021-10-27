@@ -5,7 +5,7 @@ const InputText = ({ currentToDo, textChange, submitToDo }) => (
     <form onSubmit={submitToDo}>
       <label className="todoLabel headers">Stuffs:</label>
       <br/>
-      <textarea className="inputBx" type="text" onChange={textChange}/>
+      <textarea className="inputBx" value={currentToDo} type="text" onChange={textChange}/>
       <br/>
       <input className="submitBtn" type="submit" value="Submit"/>
     </form>
