@@ -146,6 +146,12 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
   border-bottom: 2px solid #77D970;
 }
 
+.eachTask {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 /*
 Grouping content
 ================
