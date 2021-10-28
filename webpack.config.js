@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { NODE_ENV } = process.env
+const inDevelopment = NODE_ENV === "development";
 
 const config = {
   mode: "production",
@@ -14,7 +16,11 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
-        exclude: /node_modules/,
+        exclude: !inDevelopment ? /node_modules\/(?!(@atlaskit\/tooltip))/ : /(node_modules)/,
+        options: {
+          cacheDirectory: inDevelopment,
+          cacheCompression: false,
+        }
       },
       {
         test: /\.css$/,

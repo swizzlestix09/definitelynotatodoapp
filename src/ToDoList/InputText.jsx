@@ -1,13 +1,22 @@
-import React from 'react';
+import React from "react";
 
 const InputText = ({ currentToDo, textChange, submitToDo }) => (
   <div className="todoForm">
-    <form onSubmit={(event)=> {submitToDo(event)}}>
+    <form
+      onSubmit={(event) => {
+        submitToDo(event);
+      }}
+    >
       <label className="todoLabel headers">Stuffs:</label>
-      <br/>
-      <textarea className="inputBx" value={currentToDo} type="text" onChange={textChange}/>
-      <br/>
-      <input className="submitBtn" type="submit" value="Submit"/>
+      <br />
+      <textarea
+        className="inputBx"
+        value={currentToDo}
+        type="text"
+        onChange={textChange}
+      />
+      <br />
+      <input className="submitBtn" type="submit" value="Submit" />
     </form>
   </div>
 );

@@ -19,20 +19,20 @@ class App extends React.Component {
     this.markedAsComplete = this.markedAsComplete.bind(this);
   }
 
-
   textChange(e) {
     let todo = e.target.value;
-    todo.includes('start writing') ? todo = todo.split("start writing")[1] : todo;
-    console.log('in txtchng ', todo)
+    todo.includes("start writing")
+      ? (todo = todo.split("start writing")[1])
+      : todo;
+    console.log("in txtchng ", todo);
     this.setState({ currentToDo: todo });
     e.preventDefault();
   }
 
   submitToDo(e) {
     let current = this.state.currentToDo.slice(0);
-    console.log('uuugghhhh', current)
+    console.log("uuugghhhh", current);
     let currentToDos = [current, ...this.state.todos];
-
     this.setState({ todos: [...currentToDos], currentToDo: "start writing" });
     e.preventDefault();
   }
@@ -42,13 +42,13 @@ class App extends React.Component {
     let todos = this.state.todos;
     let completed = todos.splice(i, 1);
     let allCompleted = this.state.completedTodos;
-    this.setState({ completedTodos: [...completed, ...allCompleted]});
+    this.setState({ completedTodos: [...completed, ...allCompleted] });
     e.preventDefault();
   }
 
   render() {
-    const { todos, currentToDo, submitToDo, completedTodos} = this.state;
-    console.log('why? ', this.state.currentToDo)
+    const { todos, currentToDo, submitToDo, completedTodos } = this.state;
+    console.log("why? ", this.state.currentToDo);
     return (
       <>
         <div className="mainDiv">
